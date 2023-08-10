@@ -23,7 +23,6 @@ public class SecurityConfig {
                 .and()
                 .csrf().disable()
                 .formLogin()//로그인 설정을 담당하는 부분
-                .loginPage("/user/login")//로그인 페이지의 url설정
                 .defaultSuccessUrl("/")//로그인 성공시 이동하는 페이지
                 .and()
                 .logout()
