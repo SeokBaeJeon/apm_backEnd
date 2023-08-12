@@ -48,7 +48,7 @@ public class CrollingService {
 
 
     // 배우정보 크롤링 파트
-    @Scheduled(cron = "0 49 16 * * *") // 매월 15일 새벽 4시에 크롤링
+    // @Scheduled(cron = "0 49 16 * * *") // 매월 15일 새벽 4시에 크롤링
     public void actorDataCrollingscheduled(){
         List<String[]> crollingData = actorDataCrolling();
         actorDataSave(crollingData);
@@ -148,7 +148,7 @@ public class CrollingService {
         return actorList;
     }
     // 좌석 데이터 저장 파트
-    @Scheduled(cron="0 31 0 * * *")
+    // @Scheduled(cron="0 31 0 * * *")
     public void seatSchedule() throws IOException{
         log.info("Seat Save Start");
         List<Theater> theaters = theaterRepository.findAll();
@@ -193,7 +193,7 @@ public class CrollingService {
 
 
     // 극장 데이터 크롤링 파트
-    @Scheduled(cron = "0 46 14 * * *") // 매월 15일 새벽 4시에 크롤링
+    // @Scheduled(cron = "0 46 14 * * *") // 매월 15일 새벽 4시에 크롤링
     public void scheduled() throws IOException {
         List<String[]> crollingData = theaterDataCrolling();
         theaterDataSave(crollingData);
@@ -333,7 +333,7 @@ public class CrollingService {
     // 공연 및 스케쥴 크롤링 파트
     static PrintStream out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
 
-    @Scheduled(cron = "0 29 22 * * *")
+    // @Scheduled(cron = "0 29 22 * * *")
     public void schedule(){
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\tjrqo\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
