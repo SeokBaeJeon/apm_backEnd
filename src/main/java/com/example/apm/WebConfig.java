@@ -11,7 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://boot-heroku.herokuapp.com") // 허용할 프론트엔드 주소
+                .allowedOrigins("https://apm-frontend-bc59a307af1a.herokuapp.com") // 허용할 프론트엔드 주소
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS")
                 .allowedHeaders("Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
                         "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin",
