@@ -7,11 +7,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*") // 허용할 프론트엔드 주소
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowedHeaders("*");
+                .allowedOrigins("https://boot-heroku.herokuapp.com") // 허용할 프론트엔드 주소
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS")
+                .allowedHeaders("Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
+                        "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin",
+                        "Cache-Control", "Content-Type");
     }
 }
